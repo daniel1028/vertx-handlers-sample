@@ -1,0 +1,35 @@
+7041 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting to deploy other verticles...
+7093 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+7112 [vert.x-eventloop-thread-3] INFO  c.m.a.h.bootstrap.ProductVerticle - authentication end point ready to listen
+7114 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment id is: 5617786b-6753-41d4-85a9-c96c0261fb27 for verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+7114 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment successful
+140079 [vert.x-eventloop-thread-3] DEBUG c.m.a.h.bootstrap.ProductVerticle - Received message: {"http.body":{"id":1,"name":"facebok"}}
+140511 [vert.x-worker-thread-5] WARN  c.m.a.h.p.m.MessageProcessorHandler - Caught unexpected exception here
+com.datastax.driver.core.exceptions.InvalidQueryException: Unknown identifier id
+	at com.datastax.driver.core.exceptions.InvalidQueryException.copy(InvalidQueryException.java:50) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.DriverThrowables.propagateCause(DriverThrowables.java:37) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.AbstractSession.prepare(AbstractSession.java:104) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.repositories.cassandra.QueryExecutor.save(QueryExecutor.java:44) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.processors.command.executor.product.CreateProductExecutor.executeRequest(CreateProductExecutor.java:32) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.repositories.cassandra.transactions.CATransactionExecutor.execute(CATransactionExecutor.java:18) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.repositories.cassandra.transactions.CATransactionExecutor.executeTransaction(CATransactionExecutor.java:12) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.repositories.cassandra.CAProductRepo.createProduct(CAProductRepo.java:17) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.messageProcessor.ProductMessageProcessor.process(ProductMessageProcessor.java:20) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.processors.messageProcessor.MessageProcessor.process(MessageProcessor.java:34) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.bootstrap.ProductVerticle.lambda$null$0(ProductVerticle.java:25) [modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$17(ContextImpl.java:296) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.vertx.core.impl.OrderedExecutorFactory$OrderedExecutor.lambda$new$265(OrderedExecutorFactory.java:91) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111]
+Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Unknown identifier id
+	at com.datastax.driver.core.Responses$Error.asException(Responses.java:136) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.SessionManager$4.apply(SessionManager.java:220) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.SessionManager$4.apply(SessionManager.java:196) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.google.common.util.concurrent.Futures$ChainingListenableFuture.run(Futures.java:861) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111]
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	... 1 common frames omitted
+190619 [vert.x-eventloop-thread-3] DEBUG c.m.a.h.bootstrap.ProductVerticle - Received message: {"http.body":{"product_id":1,"product_name":"facebok"}}
+7289332 [vert.x-eventloop-thread-3] DEBUG c.m.a.h.bootstrap.ProductVerticle - Received message: {"http.body":{"product_id":2,"product_name":"whatsapp"}}

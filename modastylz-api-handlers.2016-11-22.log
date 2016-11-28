@@ -1,0 +1,72 @@
+6370 [vert.x-worker-thread-2] ERROR c.m.a.h.infra.CADataSourceRegistry - Error while initializing cassandra : {}
+com.datastax.driver.core.exceptions.InvalidQueryException: Keyspace 'modastylz' does not exist
+	at com.datastax.driver.core.exceptions.InvalidQueryException.copy(InvalidQueryException.java:50) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.DriverThrowables.propagateCause(DriverThrowables.java:37) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.Cluster.connect(Cluster.java:282) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.infra.CADataSourceRegistry.initializeComponent(CADataSourceRegistry.java:40) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.bootstrap.BootstrapVerticle.startApplication(BootstrapVerticle.java:96) [modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.modastylz.api.handlers.bootstrap.BootstrapVerticle.lambda$start$0(BootstrapVerticle.java:26) [modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$17(ContextImpl.java:296) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.vertx.core.impl.OrderedExecutorFactory$OrderedExecutor.lambda$new$265(OrderedExecutorFactory.java:91) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) ~[na:1.8.0_111]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) ~[na:1.8.0_111]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_111]
+Caused by: com.datastax.driver.core.exceptions.InvalidQueryException: Keyspace 'modastylz' does not exist
+	at com.datastax.driver.core.Responses$Error.asException(Responses.java:136) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.DefaultResultSetFuture.onSet(DefaultResultSetFuture.java:179) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.RequestHandler.setFinalResult(RequestHandler.java:177) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.RequestHandler.access$2500(RequestHandler.java:46) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.RequestHandler$SpeculativeExecution.setFinalResult(RequestHandler.java:797) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.RequestHandler$SpeculativeExecution.onSet(RequestHandler.java:631) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:1070) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at com.datastax.driver.core.Connection$Dispatcher.channelRead0(Connection.java:993) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:266) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:321) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1280) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:342) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:328) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:890) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:564) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:505) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:419) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:391) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:112) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:145) ~[modastylz-api-handlers-0.1-snapshot-fat.jar:na]
+	... 1 common frames omitted
+6373 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting to deploy other verticles...
+6374 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+6397 [vert.x-eventloop-thread-3] INFO  c.m.a.h.bootstrap.ProductVerticle - authentication end point ready to listen
+6399 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment id is: 0906a9b8-a38e-49cb-b009-5fc0450aa543 for verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+6399 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment successful
+10630 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting to deploy other verticles...
+10633 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+10665 [vert.x-eventloop-thread-3] INFO  c.m.a.h.bootstrap.ProductVerticle - authentication end point ready to listen
+10667 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment id is: dac3774a-001d-43f5-a88a-80e4dcf8de60 for verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+10667 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment successful
+11056 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting to deploy other verticles...
+11082 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+11133 [vert.x-eventloop-thread-3] INFO  c.m.a.h.bootstrap.ProductVerticle - authentication end point ready to listen
+11135 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment id is: fdd0f3ed-925b-484e-af17-a8e8d7211109 for verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+11135 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment successful
+5227 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting to deploy other verticles...
+5279 [vert.x-eventloop-thread-2] DEBUG c.m.a.h.bootstrap.BootstrapVerticle - Starting verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+5305 [vert.x-eventloop-thread-3] INFO  c.m.a.h.bootstrap.ProductVerticle - authentication end point ready to listen
+5306 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment id is: 4b66bdc2-01f6-4efa-ae42-7b2bb85e6efd for verticle: service:com.modastylz.api.handlers.bootstrap.ProductVerticle
+5306 [vert.x-eventloop-thread-2] INFO  c.m.a.h.bootstrap.BootstrapVerticle - Deployment successful
+2293019 [vert.x-eventloop-thread-3] DEBUG c.m.a.h.bootstrap.ProductVerticle - Received message: {"http.body":{}}
